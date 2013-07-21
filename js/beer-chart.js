@@ -358,7 +358,7 @@ function isDataEmpty(chart, column, rowStart, rowEnd){
             return false;
         }
     }
-    console.log(column);
+    // console.log(column);
     return true;
 }
 
@@ -389,7 +389,7 @@ function updateVisibility(lineName, $button){
         chart = prevBeerChart;
     }
     else{
-        console.log("cannot find chart with id " + chartId);
+        // console.log("cannot find chart with id " + chartId);
         return;
     }
     if($button.hasClass("inactive")){
