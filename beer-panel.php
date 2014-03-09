@@ -26,26 +26,78 @@
 	</div>
 	<div id="logo-container">
 		<img src="brewpi_logo.png">
-		<span id="beername">Fermenting: <?php echo $beerName;?></span>
+		<div id=beer-name-container>
+			<span>Fermenting: </span><a href='#' id="beer-name"><?php echo $beerName;?></a>
+			<span class="data-logging-state"></span>
+		</div>
 	</div>
 	<button class="script-status ui-state-error"></button>
-	<button id="maintenance">Maintenance panel</button>
+	<button id="maintenance" class="ui-state-default">Maintenance panel</button>
 </div>
 <div class="chart-container">
     <div id="curr-beer-chart-label" class="beer-chart-label"></div>
-    <div id="curr-beer-chart" class="beer-chart" style="width:900px; height:390px"></div>
-	<div id="curr-beer-chart-controls" class="beer-chart-controls" style="visibility: hidden">
-		<button id="refresh-curr-beer-chart"></button>
-		<button class="chart-help"></button>
-		<button class="toggle beerTemp" title="Beer temperature" onClick="toggleLine(this)">
-		<button class="toggle beerSet" title="Beer setting" onClick="toggleLine(this)">
-		<button class="toggle fridgeTemp" title="Fridge temperature" onClick="toggleLine(this)">
-		<button class="toggle fridgeSet inactive" title="Fridge setting" onClick="toggleLine(this)">
-		<button class="toggle roomTemp inactive" title="Room temperature" onClick="toggleLine(this)">
-		<button class="toggleAnnotations" title="Annotations" onClick="toggleAnnotations(this)">A</button>
+    <div id="curr-beer-chart" class="beer-chart" style="width:815px; height:390px"></div>
+	<div id="curr-beer-chart-controls" class="beer-chart-controls" style="display: none">
+	    <div id="curr-beer-chart-buttons" class="beer-chart-buttons">
+	    	<div class="beer-chart-legend-row">
+				<button class="refresh-curr-beer-chart" title="Refresh"></button>
+	    		<div class="beer-chart-legend-label">Refresh Chart</div>
+	    		<br class="crystal" />
+	    	</div>
+	    	<div class="beer-chart-legend-row last">
+				<button class="chart-help" title="Help"></button>
+	    		<div class="beer-chart-legend-label">Help</div>
+    			<br class="crystal" />
+	    	</div>
+		</div>
+	    <div id="curr-beer-chart-legend" class="beer-chart-legend">
+	    	<div class="beer-chart-legend-row time">
+	    		<div class="beer-chart-legend-time">Date/Time</div>
+	    	</div>
+	    	<div class="beer-chart-legend-row beerTemp">
+	    		<div class="toggle beerTemp" onClick="toggleLine(this)"></div>
+	    		<div class="beer-chart-legend-label" onClick="toggleLine(this)">Beer Temp</div>
+	    		<div class="beer-chart-legend-value">--</div>
+	    		<br class="crystal" />
+	    	</div>
+	    	<div class="beer-chart-legend-row beerSet">
+				<div class="toggle beerSet" onClick="toggleLine(this)"></div>
+	    		<div class="beer-chart-legend-label" onClick="toggleLine(this)">Beer Setting</div>
+	    		<div class="beer-chart-legend-value">--</div>
+	    		<br class="crystal" />
+	    	</div>
+	    	<div class="beer-chart-legend-row fridgeTemp">
+				<div class="toggle fridgeTemp" onClick="toggleLine(this)"></div>
+	    		<div class="beer-chart-legend-label" onClick="toggleLine(this)">Fridge Temp</div>
+	    		<div class="beer-chart-legend-value">--</div>
+	    		<br class="crystal" />
+	    	</div>
+	    	<div class="beer-chart-legend-row fridgeSet">
+				<div class="toggle fridgeSet" onClick="toggleLine(this)"></div>
+	    		<div class="beer-chart-legend-label" onClick="toggleLine(this)">Fridge Setting</div>
+	    		<div class="beer-chart-legend-value">--</div>
+	    		<br class="crystal" />
+	    	</div>
+	    	<div class="beer-chart-legend-row roomTemp">
+				<div class="toggle roomTemp" onClick="toggleLine(this)"></div>
+	    		<div class="beer-chart-legend-label" onClick="toggleLine(this)">Room Temp</div>
+	    		<div class="beer-chart-legend-value">--</div>
+	    		<br class="crystal" />
+	    	</div>
+	    	<div class="beer-chart-legend-row state">
+				<div class="state-indicator"></div>
+	    		<div class="beer-chart-legend-label"></div>
+	    		<br class="crystal" />
+	    	</div>
+	    	<div class="beer-chart-legend-row annotation last">
+				<div class="toggleAnnotations dygraphDefaultAnnotation" onClick="toggleAnnotations(this)">A</div>
+	    		<div class="beer-chart-legend-label" onClick="toggleAnnotations(this)">Annotations</div>
+	    		<br class="crystal" />
+	    	</div>
+	    </div>
 	</div>
 </div>
-<div id="chart-help-popup" title="Beer graph help" style="visibility: hidden">
+<div id="chart-help-popup" title="Beer graph help" style="display: none">
 	<p>This chart displays all temperatures and state information logged by BrewPi.
 		Not all temperatures are shown by default, but you can toggle them with the colored dots.</p>
 	<p>Click and drag left or right to zoom horizontally, click and drag up or down to zoom vertically. Double click to zoom out.
