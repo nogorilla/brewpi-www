@@ -10,7 +10,7 @@ return array(
 	| Used to display your Brewery Name on each page
 	|
 	*/
-	'brewery' => 'Archangel Ales'
+	'brewery' => 'Your Brewery Name Here'
 
 );
 
