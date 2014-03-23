@@ -20,7 +20,7 @@ class HomeController extends BaseController {
 		return View::make('index');
 	}
 
-	public function register()
+	public function login()
 	{
 
 	}
