@@ -12,7 +12,7 @@ class AddUsername extends Migration {
 	public function up()
 	{
 		Schema::table('users', function($table) {
-			$table->string('username', 100);
+			$table->string('username', 100)->nullable();
 		});
 	}
 

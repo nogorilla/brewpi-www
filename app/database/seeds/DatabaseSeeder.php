@@ -24,7 +24,9 @@ class UserTableSeeder extends Seeder {
             'email'      => 'brewpi-admin@mailinator.com',
             'password'   => Hash::make('brewpi'),
             'first_name' => 'Gabe',
-            'last_name'  => 'Smith'
+            'last_name'  => 'Smith',
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
 
         ));
 	}
